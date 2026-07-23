@@ -1,8 +1,8 @@
 # 🧠 Agent Skills Monorepo
 
-一套面向 **VS Code Copilot Agent** 的领域技能（Skills）集合，覆盖简历改写、技术文章处理、前端设计品味三大方向。
+一套领域技能（Skills）集合，覆盖简历改写、技术文章处理、前端设计品味三大方向。
 
-每个 Skill 是一个自包含的 `SKILL.md` 文件（及配套参考资源），通过 Copilot Agent 的 `.github/copilot-instructions.md` 或 `AGENTS.md` 机制加载，使 Agent 在特定场景下获得深度领域知识。
+每个 Skill 是一个自包含的 `SKILL.md` 文件（及配套参考资源）
 
 ---
 
