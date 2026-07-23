@@ -1,8 +1,14 @@
 # 🧠 Agent Skills Monorepo
 
+<<<<<<< HEAD
 一套面向 **Claude（Claude Code / Claude Agent）** 的领域技能（Skills）集合，覆盖简历改写、技术文章处理、前端设计品味三大方向。
 
 每个 Skill 是一个自包含的 `SKILL.md` 文件（及配套参考资源），通过 `CLAUDE.md`、`.instructions.md`、`.prompt.md`、`.agent.md` 等机制加载，使 Claude 在特定场景下获得深度领域知识。
+=======
+一套领域技能（Skills）集合，覆盖简历改写、技术文章处理、前端设计品味三大方向。
+
+每个 Skill 是一个自包含的 `SKILL.md` 文件（及配套参考资源）
+>>>>>>> cd8dcf10a525ff03e562bec9897741bff585e42d
 
 ---
 
