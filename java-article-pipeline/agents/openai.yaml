@@ -1,0 +1,4 @@
+interface:
+  display_name: "Article Learning Pipeline"
+  short_description: "Java 长文抽取与模板化学习文档按章节重组"
+  default_prompt: "Use $article-learning-pipeline to extract Java article learning cards or recompose an output-template Markdown digest by suggested learning order."

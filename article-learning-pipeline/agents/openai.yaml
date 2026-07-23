@@ -1,0 +1,4 @@
+interface:
+  display_name: "Article Learning Pipeline"
+  short_description: "跨 Vue、小程序、Agent、Java 的技术长文抽取与章节重组"
+  default_prompt: "Use $article-learning-pipeline to extract technical article learning cards or recompose an output-template Markdown digest by suggested learning order."
