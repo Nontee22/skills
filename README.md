@@ -1,8 +1,8 @@
 # 🧠 Agent Skills Monorepo
 
-一套面向 **VS Code Copilot Agent** 的领域技能（Skills）集合，覆盖简历改写、技术文章处理、前端设计品味三大方向。
+一套面向 **Claude（Claude Code / Claude Agent）** 的领域技能（Skills）集合，覆盖简历改写、技术文章处理、前端设计品味三大方向。
 
-每个 Skill 是一个自包含的 `SKILL.md` 文件（及配套参考资源），通过 Copilot Agent 的 `.github/copilot-instructions.md` 或 `AGENTS.md` 机制加载，使 Agent 在特定场景下获得深度领域知识。
+每个 Skill 是一个自包含的 `SKILL.md` 文件（及配套参考资源），通过 `CLAUDE.md`、`.instructions.md`、`.prompt.md`、`.agent.md` 等机制加载，使 Claude 在特定场景下获得深度领域知识。
 
 ---
 
@@ -41,23 +41,32 @@
 
 ---
 
-## 🚀 使用方式
+## 🚀 使用方式（面向 Claude）
 
-### 方式一：作为 Copilot Agent Instructions 加载
+### 方式一：通过 `CLAUDE.md` 全局引用
 
-将本仓库克隆到本地后，在项目根目录创建 `.github/copilot-instructions.md`：
+在项目根目录创建 `CLAUDE.md`，引用本仓库的技能文件：
 
 ```markdown
-> 参考 skills 仓库中的技能文件以获取领域知识。
+请参考 /path/to/skills/ai-resume-polish/SKILL.md 获取简历改写指导。
+请参考 /path/to/skills/article-learning-pipeline/SKILL.md 获取文章处理流程。
 ```
 
-或在 `AGENTS.md` / `.agent.md` 中为特定 Agent 指定 skills 路径。
+将路径替换为你克隆本仓库的实际路径。建议在 `CLAUDE.md` 中只列最常用的技能，避免上下文过长。
 
-### 方式二：单文件引用
+### 方式二：按需引用（推荐）
 
-将某个 `SKILL.md` 的内容复制到项目的 `.github/copilot-instructions.md` 中，或直接在对话中引用。
+在需要特定技能时，直接在对话中告诉 Claude 参考某个 `SKILL.md`：
 
-### 方式三：通过 find-skills 发现并安装
+> 请参考 /path/to/skills/design-taste-toolkit/premium-brand-ui/SKILL.md 来设计这个页面。
+
+### 方式三：`.instructions.md` / `.prompt.md` / `.agent.md`
+
+- `.instructions.md` — 项目级持久指令，适合引用与本项目直接相关的技能
+- `.prompt.md` — 当前会话提示，适合临时技能加载
+- `.agent.md` — 自定义 Agent 定义，可为不同 Agent 绑定不同技能组合
+
+### 方式四：通过 find-skills 发现并安装
 
 使用 `find-skills` 技能搜索开放生态中的其他技能包。
 
@@ -133,7 +142,7 @@ skills/
 - `SKILL.md` — YAML frontmatter + Markdown 正文。`name` 为技能标识，`description` 包含触发条件和用途说明。
 - `references/` — 参考文件，如分类体系、提取规则、输出模板。
 - `scripts/` — 辅助脚本（如有）。
-- `agents/` — Agent 配置文件（如有）。
+- `agents/` — Claude Agent 配置文件（如有）。
 
 欢迎提交 Issue 或 PR 扩充技能库。
 
